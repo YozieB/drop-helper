@@ -25,6 +25,6 @@
 - React.js
 - Chakra UI
 
-### `Демо`
+### `Ссылка`
 
-[https://yozieb.github.io/house-story](https://yozieb.github.io/house-story)
+[https://yozieb.github.io/regex-helper](https://yozieb.github.io/regex-helper)
