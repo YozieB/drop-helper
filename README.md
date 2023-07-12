@@ -37,7 +37,7 @@
 
 ### `Ссылка`
 
-[https://yozieb.github.io/regex-helper](https://yozieb.github.io/regex-helper)
+[https://yozieb.github.io/drop-helper](https://yozieb.github.io/drop-helper)
 
 ### `История версий`
 - v.0.1 - Релиз

@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
   }
 
   if (command !== 'serve') {
-    config.base = '/regex-helper/'
+    config.base = '/drop-helper/'
   }
 
   return config
