@@ -1,4 +1,4 @@
-export const generateRegex = (string: String): void => {
+export const generateRegex = (string: string): void => {
 
     const onlyNamesArr: string[] = string.split('\n').map((el: string) => {
         const arr: string[] = el.split('/')
@@ -24,10 +24,26 @@ export const generateRegex = (string: String): void => {
 
     const filteredSymbolsArr: string[] = imageNamesArr.map(el => escapeSpecialChars(el)).filter(Boolean)
 
-    const result:string = `(${filteredSymbolsArr.join('|')})`
+    const result = `(${filteredSymbolsArr.join('|')})`
 
     navigator.clipboard.writeText(result).then(() => console.log('DONE'))
     function escapeSpecialChars(str: string) {
         return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
+}
+
+export const generateRedirect = (fromLink:string, toLink:string) => {
+    const fromLinks:string[] = fromLink.split('\n')
+    let redirects = '';
+
+    fromLinks.forEach(fromUrl => {
+        redirects += `RewriteRule ^${fromUrl.replace(/(http(s)?:\/\/)?(www\.)?[^/]+\/?/i, '')}$ ${toLink} [R=301,L]\n`;
+    })
+
+    navigator.clipboard.writeText(redirects).then(() => console.log('DONE'))
+
+}
+
+export const generateRedirectEveryPage = (toLink:string) => {
+    navigator.clipboard.writeText(`RewriteRule ^(.*)$ ${toLink}$1 [L,R=301]`).then(() => console.log('DONE'))
 }
