@@ -16,9 +16,6 @@ export const Home = ({title, handleOpen }: IHome) => {
             <Button w="100%" colorScheme='teal' onClick={handleOpen}>
                 Выбрать сервис
             </Button>
-            <Text textAlign="justify" mt="5" mb="5" fontSize="l">
-                Сервис находится в <Badge colorScheme="blue">разработке</Badge>, если у вас есть идеи, пишите в <Badge colorScheme='blue'>telegram</Badge>
-            </Text>
         </>
     );
 }

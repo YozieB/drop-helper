@@ -27,14 +27,14 @@ function App() {
     const btnRef:React.MutableRefObject<any> = React.useRef()
 
     return (
-        <Flex p="25" direction="column" minHeight='100svh'>
+        <Flex p="5" direction="column" minHeight='100svh'>
             <Flex justifyContent="end" p="25 0 25 25">
                 <Button onClick={onOpen} w="50" h="50">
                     <HamburgerIcon boxSize={6} />
                 </Button>
             </Flex>
             <Center>
-                <Container maxW='550px' centerContent p="5">
+                <Container maxW='550px' centerContent p="0">
                     <Routes>
                         <Route path="/" element={<Home title='Drop' handleOpen={onOpen} />} />
                         <Route path="/regex" element={<Regex title='Regex' />} />
