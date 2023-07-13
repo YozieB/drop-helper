@@ -87,6 +87,9 @@ export const Redirect = ({ title }: IRegex) => {
             <Text width="100%" textAlign="justify" mb="5">
                 Для корректной работы ссылка на конечный сайт должна быть <Badge colorScheme='green'>полной</Badge>, т.е. начинаться с <Badge>'https://'</Badge> или <Badge>'www'</Badge>
             </Text>
+            <Text width="100%" textAlign="justify" mb="5">
+                Редирект с перенаправлением всех ссылок на конечный сайт вставлять в конец <Badge colorScheme='blue'>.htaccess</Badge>
+            </Text>
         </>
     );
 }

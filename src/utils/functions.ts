@@ -45,5 +45,5 @@ export const generateRedirect = (fromLink:string, toLink:string) => {
 }
 
 export const generateRedirectEveryPage = (toLink:string) => {
-    navigator.clipboard.writeText(`RewriteRule ^(.*)$ ${toLink}$1 [L,R=301]`).then(() => console.log('DONE'))
+    navigator.clipboard.writeText(`RewriteRule ^(.*)$ ${toLink} [L,R=301]`).then(() => console.log('DONE'))
 }
