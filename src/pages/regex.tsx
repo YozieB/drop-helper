@@ -134,6 +134,44 @@ export const Regex = ({ title }: IRegex) => {
                         </Button>
                     </Tooltip>
                 </ListItem>
+                <ListItem>
+                    <Tooltip placement="auto" label="Кликни, чтобы скопировать" aria-label='A tooltip'>
+                        <Button
+                            colorScheme="gray"
+                            onClick={() =>
+                            {
+                                toast({
+                                    description: "Скопировано",
+                                    status: 'info',
+                                    duration: 3000,
+                                    position: 'bottom-right',
+                                    isClosable: false,
+                                })
+                                navigator.clipboard.writeText('(?<=<!--LiveInternet counter-->)([\\s\\S]*?)(?=<!--/LiveInternet-->)\n').then(() => console.log('DONE'))
+                            }}>
+                            LiveInternet counter
+                        </Button>
+                    </Tooltip>
+                </ListItem>
+                <ListItem>
+                    <Tooltip placement="auto" label="Кликни, чтобы скопировать" aria-label='A tooltip'>
+                        <Button
+                            colorScheme="gray"
+                            onClick={() =>
+                            {
+                                toast({
+                                    description: "Скопировано",
+                                    status: 'info',
+                                    duration: 3000,
+                                    position: 'bottom-right',
+                                    isClosable: false,
+                                })
+                                navigator.clipboard.writeText('(?<=<!--Rating@Mail.ru counter--><!--// Rating@Mail.ru counter-->)\n').then(() => console.log('DONE'))
+                            }}>
+                            Rating@Mail.ru counter
+                        </Button>
+                    </Tooltip>
+                </ListItem>
             </List>
         </>
     );
