@@ -166,7 +166,7 @@ export const Regex = ({ title }: IRegex) => {
                                     position: 'bottom-right',
                                     isClosable: false,
                                 })
-                                navigator.clipboard.writeText('(?<=<!--Rating@Mail.ru counter--><!--// Rating@Mail.ru counter-->)\n').then(() => console.log('DONE'))
+                                navigator.clipboard.writeText('(?<=<!-- Rating@Mail.ru counter -->)([\\s\\S]*?)(?=<!-- //Rating@Mail.ru counter -->)\n').then(() => console.log('DONE'))
                             }}>
                             Rating@Mail.ru counter
                         </Button>
