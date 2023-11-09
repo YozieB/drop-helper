@@ -70,6 +70,26 @@ export const Regex = ({ title }: IRegex) => {
                                     position: 'bottom-right',
                                     isClosable: false,
                                 })
+                                navigator.clipboard.writeText('\\/[^\\/]*_\\/\n').then(() => console.log('DONE'))
+                            }}
+                        >
+                            WebArchive удаление тегов (возможное)
+                        </Button>
+                    </Tooltip>
+                </ListItem>
+                <ListItem>
+                    <Tooltip placement="auto" label="Кликни, чтобы скопировать" aria-label='A tooltip'>
+                        <Button
+                            colorScheme="gray"
+                            onClick={() =>
+                            {
+                                toast({
+                                    description: "Скопировано",
+                                    status: 'info',
+                                    duration: 3000,
+                                    position: 'bottom-right',
+                                    isClosable: false,
+                                })
                                 navigator.clipboard.writeText('(?<=<!-- Yandex\\.Metrika informer -->)([\\s\\S]*?)(?=<!-- \\/Yandex\\.Metrika informer -->)\n').then(() => console.log('DONE'))
                             }}
                         >
