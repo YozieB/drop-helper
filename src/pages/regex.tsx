@@ -70,7 +70,7 @@ export const Regex = ({ title }: IRegex) => {
                                     position: 'bottom-right',
                                     isClosable: false,
                                 })
-                                navigator.clipboard.writeText('\\/[^\\/]*_\\/\n').then(() => console.log('DONE'))
+                                navigator.clipboard.writeText('\\/web[^_]*_\\/').then(() => console.log('DONE'))
                             }}
                         >
                             WebArchive удаление тегов (возможное)
