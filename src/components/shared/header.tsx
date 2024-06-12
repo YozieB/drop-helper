@@ -1,5 +1,5 @@
 import { Badge, Heading } from "@chakra-ui/react";
-import { IHeader } from "../utils/interfaces.tsx";
+import { IHeader } from "../../utils/interfaces.tsx";
 
 export const Header = ({ title }: IHeader) => {
     return (

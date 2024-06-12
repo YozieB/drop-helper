@@ -7,7 +7,7 @@ import {
     useToast
 } from "@chakra-ui/react";
 import { IRegex } from "../utils/interfaces.tsx";
-import {Header} from "../components/header.tsx";
+import {Header} from "../components/shared/header.tsx";
 import React, {useState} from "react";
 import { generateRedirect, generateRedirectEveryPage } from "../utils/functions.ts";
 

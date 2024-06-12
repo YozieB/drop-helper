@@ -2,54 +2,16 @@ import {Badge, Button, Heading, List, ListItem, Text, Textarea, Tooltip, useToas
 import { generateRegex } from "../utils/functions.ts";
 import React, {useState} from "react";
 import { IRegex } from "../utils/interfaces.tsx";
+import {RegexFormContainer} from "../components/regex/RegexFormContainer.tsx";
 
-export const Regex = ({ title }: IRegex) => {
-    const [value, setValue] = useState('')
-    const [isRunning, setIsRunning] = useState(false)
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        setValue(e.target.value)
-    }
+const _Regex = ({ title }: IRegex) => {
     const toast = useToast()
-
     return (
         <>
             <Heading display="flex" alignItems="end" mb="10" as="h1"><Badge fontSize='xxxl' colorScheme='default'>{title}</Badge> <Badge fontSize='sm' colorScheme='green'>Helper</Badge></Heading>
-            <Textarea
-                size="lg"
-                resize="none"
-                mb="4"
-                h="28"
-                value={value}
-                onChange={handleInputChange}
-                isDisabled={isRunning}
-                placeholder='Вставь данные из файла badfiles.txt'
-            >
-            </Textarea>
-            <Button
-                onClick={() => {
-                    // Имитируем запрос :))
-                    setIsRunning(true)
-                    setTimeout(() => {
-                        setIsRunning(false)
-                        generateRegex(value)
-                        toast({
-                            title: 'Regex готов.',
-                            description: "Regex скопирован в буфер обмена",
-                            status: 'success',
-                            duration: 20000,
-                            isClosable: true,
-                        })
-                        setValue('')
-                    }, Math.floor(Math.random() * (5000 - 100 + 1) + 100))
-                }}
-                size="lg"
-                isDisabled={value.length === 0}
-                isLoading={isRunning}
-                w="100%"
-            >
-                Сгенерировать regex
-            </Button>
+            <RegexFormContainer>
+
+            </RegexFormContainer>
             <Text textAlign="justify" mt="5" mb="5">
                 Утилита подходит для парсинга <Badge colorScheme='purple'>badfiles.txt</Badge> с восстановленного дропа через севрис <Badge colorScheme='green'><a
                 href="https://r-tools.org">r-tools.org</a></Badge>,
@@ -196,3 +158,5 @@ export const Regex = ({ title }: IRegex) => {
         </>
     );
 }
+
+export const Regex = React.memo(_Regex)
