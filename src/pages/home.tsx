@@ -3,11 +3,11 @@ import { IHome } from "../utils/interfaces.tsx";
 import {
     Badge,
     Button,
-    Text, useDisclosure,
+    Text
 } from "@chakra-ui/react";
-import React, {memo} from "react";
+import React from "react";
 
-const _Home = ({title, handleOpen }: IHome) => {
+const _Home = ({title, handleOpen }: IHome): React.FC => {
     return (
         <>
             <Header title={title} />
@@ -21,4 +21,4 @@ const _Home = ({title, handleOpen }: IHome) => {
     );
 }
 
-export const Home = React.memo(_Home)
+export const Home: typeof _Home = React.memo(_Home)

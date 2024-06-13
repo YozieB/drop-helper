@@ -1,8 +1,7 @@
-import {Button, FormControl, Textarea, useToast} from "@chakra-ui/react";
-import React, {ChangeEvent, useCallback, useState} from "react";
+import {Textarea, useToast} from "@chakra-ui/react";
+import React, {useCallback, useState} from "react";
 import {RegexButton} from "./RegexButton.tsx";
 import {generateRegex} from "../../utils/functions.ts";
-import {RegexForm} from "./RegexForm.tsx";
 
 
 export const RegexFormContainer = ({children}): React.FC => {
@@ -19,8 +18,9 @@ export const RegexFormContainer = ({children}): React.FC => {
         e.preventDefault();
         // Имитируем запрос :))
         setIsRunning(true)
-        setTimeout(() => {
-            setIsRunning(false)
+        new Promise(resolve => {
+            setTimeout(resolve, Math.floor(Math.random() * (2500 - 100 + 1) + 100))
+        }).then(() => {
             generateRegex(value)
             toast({
                 title: 'Regex готов.',
@@ -30,7 +30,8 @@ export const RegexFormContainer = ({children}): React.FC => {
                 isClosable: true,
             })
             setValue('')
-        }, Math.floor(Math.random() * (2500 - 100 + 1) + 100))
+            setIsRunning(false)
+        })
     }
     const isButtonDisabled = value.length === 0
     return (

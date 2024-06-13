@@ -7,7 +7,7 @@ interface IRegexButton {
     isRegexRunning: boolean;
 }
 
-const _RegexButton = ({isDisabled, isRegexRunning}): React.FC<IRegexButton> => {
+const _RegexButton = ({isDisabled, isRegexRunning}: IRegexButton): React.FC => {
     return (
         <Button
             type="submit"
@@ -21,4 +21,4 @@ const _RegexButton = ({isDisabled, isRegexRunning}): React.FC<IRegexButton> => {
     )
 }
 
-export const RegexButton: React.FC<IRegexButton> = React.memo(_RegexButton)
+export const RegexButton: typeof _RegexButton = React.memo(_RegexButton)

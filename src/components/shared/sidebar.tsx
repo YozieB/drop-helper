@@ -6,7 +6,7 @@ import {
     DrawerContent,
     DrawerHeader,
     DrawerOverlay, Heading,
-    Link, useDisclosure
+    Link
 } from "@chakra-ui/react";
 import {Link as ReachLink} from "react-router-dom";
 import React from "react";
